@@ -24,7 +24,7 @@ const recipeSchema = new mongoose.Schema({
 	steps: [String],
 	options: [String],
 	tools: [String],
-	photo: String,
+	imageUrl: String,
 
 	created_at: { type: Date, default: Date.now },
 	updated_at: { type: Date, default: Date.now }

@@ -3,8 +3,9 @@ import { Recipe } from '../models/recipe.js'
 
 class RecipeController {
 	async createOne(req, res) {
-		const { authorUuid, title, description, categories, preparationTime, ingredients, vegan, glutenFree, porkFree, steps, options, tools } = req.body
-		const newRecipe = new Recipe({authorUuid, title, description, categories, preparationTime, ingredients, vegan, glutenFree, porkFree, steps, options, tools })
+		const recipe = req.body
+		const imageUrl = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+		const newRecipe = new Recipe({...recipe, imageUrl: imageUrl})
 
 		try {
 			const recipe = await Recipe.create(newRecipe)
@@ -19,7 +20,6 @@ class RecipeController {
 			const recipes = await Recipe.find()
         
         	res.status(200).json(recipes)
-			console.log(recipes[1].tools)
 		} catch (err) {
 			res.status(500).json({ error: err.message })
 		}

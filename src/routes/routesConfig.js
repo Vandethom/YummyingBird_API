@@ -1,5 +1,3 @@
-
-
 export class RoutesConfig {
 	constructor(app, name) {
 		this.app = app

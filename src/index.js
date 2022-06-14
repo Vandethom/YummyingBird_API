@@ -4,14 +4,14 @@ import rateLimit from 'express-rate-limit'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-
+import * as path from 'path'
+import { fileURLToPath } from 'url'
 
 // import errorHandler from './middlewares/error-handler'
 // import { UserRoutes } from './routes/user.routes'
-// import { AuthRoutes } from './routes/auth.routes'
+import { AuthRoutes } from './routes/auth.js'
 import { RecipeRoutes } from './routes/recipe.js'
 
-import { reeturn } from './module.js'
 
 dotenv.config()
 
@@ -23,6 +23,9 @@ mongoose.connect(db)
 	.then(() => console.log('Connected to YummyingBird on MongoDB.'))
 	.catch(() => console.log('Failed to connect to MongoDB.'))
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+// console.log('directory-name 👉️', __dirname)
 const routes = []
 
 // Restrict all routes to only 100 requests per IP address every 10 minutes
@@ -31,7 +34,9 @@ const limiter = rateLimit({
 	max: 100                     // 100 requests per IP
 })
 
+
 app.use(
+	express.static(__dirname),
 	helmet(),
 	cors(),
 	express.json(),
@@ -41,7 +46,7 @@ app.use(
 
 routes.push(
 	// new UserRoutes(app),
-	// new AuthRoutes(app),
+	new AuthRoutes(app),
 	new RecipeRoutes(app)
 )
 
