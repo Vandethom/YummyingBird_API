@@ -15,7 +15,7 @@ dotenv.config()
 
 const db = process.env.DB_CONNECT_STRING
 const app = express()
-const host = '0.0.0.0'
+const host = '0.0.0.0' || 'localhost'
 const port = process.env.PORT || 5000
 
 mongoose.connect(db)
@@ -49,7 +49,7 @@ routes.push(
 	new RecipeRoutes(app)
 )
 
-app.listen(port, host, () => {
+app.listen(port, () => {
 	console.log(`Server is listening on port ${port} !`)
 
 	routes.forEach((route) => {
