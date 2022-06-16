@@ -51,7 +51,7 @@ routes.push(
 	new RecipeRoutes(app)
 )
 
-app.listen(port || 5000, host, () => {
+app.listen(port, host, () => {
 	console.log(`Server is listening on port ${port} !`)
 
 	routes.forEach((route) => {
