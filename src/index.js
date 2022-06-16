@@ -16,7 +16,7 @@ dotenv.config()
 const db = process.env.DB_CONNECT_STRING
 const app = express()
 const host = '0.0.0.0' || 'localhost'
-const port = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000
 
 mongoose.connect(db)
 	.then(() => console.log('Connected to YummyingBird on MongoDB.'))
