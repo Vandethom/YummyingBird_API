@@ -49,7 +49,7 @@ routes.push(
 	new RecipeRoutes(app)
 )
 
-app.listen(PORT || 5000, () => {
+app.listen(PORT, () => {
 	console.log(`Server is listening !`)
 
 	routes.forEach((route) => {
