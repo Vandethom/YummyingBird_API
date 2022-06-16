@@ -49,8 +49,8 @@ routes.push(
 	new RecipeRoutes(app)
 )
 
-app.listen(port, () => {
-	console.log(`Server is listening on port ${port} !`)
+app.listen(process.env.PORT || 5000, () => {
+	console.log(`Server is listening !`)
 
 	routes.forEach((route) => {
 		console.log(`Routes configured for ${route.getName()}`)
