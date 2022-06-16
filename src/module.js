@@ -1,1 +1,3 @@
-export const module = '123'
+const module = '123'
+
+export default module
