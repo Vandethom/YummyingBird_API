@@ -17,7 +17,8 @@ dotenv.config()
 
 const db = process.env.DB_CONNECT_STRING
 const app = express()
-const port = process.env.PORT
+const host = '0.0.0.0'
+const port = process.env.PORT || 5000
 
 mongoose.connect(db)
 	.then(() => console.log('Connected to YummyingBird on MongoDB.'))
@@ -50,7 +51,7 @@ routes.push(
 	new RecipeRoutes(app)
 )
 
-app.listen(port || 5000, () => {
+app.listen(port || 5000, host, () => {
 	console.log(`Server is listening on port ${port} !`)
 
 	routes.forEach((route) => {
