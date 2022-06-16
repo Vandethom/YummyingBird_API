@@ -7,8 +7,6 @@ import dotenv from 'dotenv'
 import * as path from 'path'
 import { fileURLToPath } from 'url'
 
-// import errorHandler from './middlewares/error-handler'
-// import { UserRoutes } from './routes/user.routes'
 import { AuthRoutes } from './routes/auth.js'
 import { RecipeRoutes } from './routes/recipe.js'
 
