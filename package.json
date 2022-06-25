@@ -8,7 +8,8 @@
     "start": "node src/index.js -p $PORT",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d build",
-    "postinstall": "tsc"
+    "tsc": "tsc",
+    "postinstall": "npm run tsc"
   },
   "keywords": [],
   "author": "",
