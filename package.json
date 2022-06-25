@@ -7,9 +7,9 @@
   "scripts": {
     "start": "node src/index.js -p $PORT",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d build",
     "tsc": "./node_modules/typescript/bin/tsc",
-    "build": "tsc",
-    "postinstall": "npm run build"
+    "postinstall": "npm run tsc"
   },
   "keywords": [],
   "author": "",
@@ -36,8 +36,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^8.17.0",
-    "typescript": "^4.7.4"
+    "eslint": "^8.17.0"
   },
   "engines": {
     "node": "16.15.1",
