@@ -7,9 +7,9 @@
   "scripts": {
     "start": "node src/index.js -p $PORT",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d build",
-    "tsc": "tsc",
-    "postinstall": "npm run tsc"
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "build": "tsc",
+    "postinstall": "npm run build"
   },
   "keywords": [],
   "author": "",
