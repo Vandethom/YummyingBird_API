@@ -6,10 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js -p $PORT",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "./node_modules/typescript/bin/tsc",
-    "build": "npm run tsc",
-    "postinstall": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
