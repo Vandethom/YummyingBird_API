@@ -37,7 +37,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "eslint": "^8.17.0",
-    "tsc": "4.6.3"
+    "tsc": "^4.6.3"
   },
   "engines": {
     "node": "16.15.1",
