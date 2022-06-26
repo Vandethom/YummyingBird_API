@@ -34,6 +34,7 @@
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.5",
     "@babel/node": "^7.18.5",
     "@babel/plugin-transform-spread": "^7.17.12",
