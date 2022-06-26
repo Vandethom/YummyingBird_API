@@ -35,9 +35,9 @@ const limiter = rateLimit({
 
 
 app.use(
+	cors(),
 	express.static(__dirname),
 	helmet(),
-	cors(),
 	express.json(),
 	limiter,
 	// errorHandler
