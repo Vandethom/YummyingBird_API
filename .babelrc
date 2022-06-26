@@ -1,5 +1,5 @@
 {
-    "presets": ["@babel/preset-typescript"],
+    "presets": ["env"],
     "plugins": [
         [
           "@babel/plugin-transform-spread",
