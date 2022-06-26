@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
+    "@babel/node": "^7.18.5",
     "@babel/plugin-transform-spread": "^7.17.12",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
