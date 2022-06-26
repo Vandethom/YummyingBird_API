@@ -18,7 +18,7 @@ const app = express()
 const host = '0.0.0.0' || 'localhost'
 const PORT = process.env.PORT || 5000
 
-mongoose.connect(db)
+mongoose.connect("mongodb+srv://Thomas:fondation7@YummyinBird.5uylw8c.mongodb.net/?retryWrites=true&w=majority")
 	.then(() => console.log('Connected to YummyingBird on MongoDB.'))
 	.catch(() => console.log('Failed to connect to MongoDB.'))
 
