@@ -42,7 +42,9 @@ app.use(function(req, res, next) {
   })
 
 app.use(
-	cors(),
+	cors({
+		origin: '*'
+	}),
 	express.static(__dirname),
 	helmet(),
 	express.json(),
