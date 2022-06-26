@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d build",
     "tsc": "./node_modules/typescript/bin/tsc",
-    "postinstall": "tsc"
+    "postinstall": "npm run tsc"
   },
   "keywords": [],
   "author": "",
