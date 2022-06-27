@@ -13,7 +13,7 @@ class AuthController {
         if (!user) {
             res.status(400).json('Bad inputs or user doesn\'t exist.')
         } else {
-            bcrypt.compare(password, user.password, function (err, result) {
+            await bcrypt.compare(password, user.password, function (err, result) {
                 if (result === true) {
                     res.status(200).json({
                         user: user,
