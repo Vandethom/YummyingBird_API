@@ -18,9 +18,18 @@ const app = express()
 const host = '0.0.0.0' || 'localhost'
 const PORT = process.env.PORT || 5000
 
-mongoose.connect(db)
-	.then(() => console.log('Connected to YummyingBird on MongoDB.'))
-	.catch((err) => console.log('Failed to connect to MongoDB. Following error ::::: ', err))
+mongoose.connect("mongodb+srv://Thomas:fondation7@YummyinBird.5uylw8c.mongodb.net/?retryWrites=true&w=majority", {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+      })
+      .then(() => {
+        console.log('Database connected successfully!');
+      })
+      .catch((err) => {
+        console.log('Error connecting with error code:', err);
+      });
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -42,9 +51,7 @@ app.use(function(req, res, next) {
   })
 
 app.use(
-	cors({
-		origin: '*'
-	}),
+	cors(),
 	express.static(__dirname),
 	helmet(),
 	express.json(),
