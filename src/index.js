@@ -13,14 +13,14 @@ import { RecipeRoutes } from './routes/recipe.js'
 
 dotenv.config()
 
-const db = process.env.DB_CONNECT_STRING
+const db = process.env.MONGODB_URI
 const app = express()
 const host = '0.0.0.0' || 'localhost'
 const PORT = process.env.PORT || 5000
 
-mongoose.connect("mongodb+srv://Thomas:fondation7@YummyinBird.5uylw8c.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect(db)
 	.then(() => console.log('Connected to YummyingBird on MongoDB.'))
-	.catch(() => console.log('Failed to connect to MongoDB.'))
+	.catch((err) => console.log('Failed to connect to MongoDB. Following error ::::: ', err))
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
