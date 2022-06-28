@@ -13,7 +13,7 @@ class AuthController {
         if (!user) {
             res.status(400).json('Bad inputs or user doesn\'t exist.')
         } else {
-            await bcrypt.compare(password, user.password, function (err, result) {
+            bcrypt.compare(password, user.password, function (err, result) {
                 if (result === true) {
                     res.status(200).json({
                         user: user,
@@ -25,6 +25,7 @@ class AuthController {
                     })
                 } else {
                     res.status(401).json({ error: 'Mot de passe incorrect.'})
+                    res.redirect( '/' )
                 }
             }
         )}	
