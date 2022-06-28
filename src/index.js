@@ -18,12 +18,7 @@ const app = express()
 const host = '0.0.0.0' || 'localhost'
 const PORT = process.env.PORT || 5000
 
-mongoose.connect("mongodb+srv://Thomas:fondation7@YummyinBird.5uylw8c.mongodb.net/?retryWrites=true&w=majority", {
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        useFindAndModify: false,
-        useUnifiedTopology: true,
-      })
+mongoose.connect("mongodb+srv://Thomas:fondation7@YummyinBird.5uylw8c.mongodb.net/?retryWrites=true&w=majority")
       .then(() => {
         console.log('Database connected successfully!');
       })
