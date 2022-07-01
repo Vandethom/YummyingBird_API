@@ -18,6 +18,8 @@ const app = express()
 const host = '0.0.0.0' || 'localhost'
 const PORT = process.env.PORT || 5000
 
+app.use(cors())
+
 mongoose.connect("mongodb+srv://Thomas:fondation7@YummyinBird.5uylw8c.mongodb.net/?retryWrites=true&w=majority")
       .then(() => {
         console.log('Database connected successfully!');
@@ -46,7 +48,6 @@ app.use(function(req, res, next) {
   })
 
 app.use(
-	cors(),
 	express.static(__dirname),
 	helmet(),
 	express.json(),

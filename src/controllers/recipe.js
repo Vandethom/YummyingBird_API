@@ -4,7 +4,7 @@ import { Recipe } from '../models/recipe.js'
 class RecipeController {
 	async createOne(req, res) {
 		const recipe = req.body
-		const imageUrl = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+		const imageUrl = `${req.protocol}://${req.get('host')}/images/${req.file}`
 		const newRecipe = new Recipe({...recipe, imageUrl: imageUrl})
 
 		try {
